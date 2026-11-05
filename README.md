@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Siddesh Engineering Works Website
 
-## Getting Started
+The business website for Siddesh Engineering Works, a precision sheet metal manufacturer in India. It presents the company's services, machines, products and clients, and lets customers send an inquiry straight from the page. Built as a single page Next.js site with smooth scroll animations and a mobile menu.
 
-First, run the development server:
+<p align="center"><img src="public/images/hero-machine.png" width="520" alt="CNC fiber laser cutting machine"></p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What the site covers
+
+| Section | Content |
+|---|---|
+| Home | Company introduction and call to action |
+| About | Who the company is and what it makes |
+| Services | Laser cutting, CNC punching, fabrication and enclosures |
+| Capabilities | CNC fiber laser cutting, CNC press brake and CNC turret punching machines |
+| Products | Metal enclosures, counters and shelving, with photos |
+| Clients | Nine client companies across several industries |
+| Contact | Contact person and an inquiry form |
+
+## How it works
+
+```mermaid
+flowchart LR
+    V[Visitor] --> P[Single page Next.js site]
+    P --> N[Sticky nav with anchor links]
+    P --> A[Sections fade in on scroll]
+    P --> F[Inquiry form]
+    F --> W[Web3Forms]
+    W --> E[Email to the business]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **One page, many sections.** The navigation bar links to each section, and a toggle menu takes over on phones.
+* **Animation.** Framer Motion fades and slides each section in as it scrolls into view.
+* **Inquiries without a backend.** The form posts name, phone, email and requirement to Web3Forms, which emails the business. No server or database is needed.
+* **Search ready.** Page metadata sets a descriptive title, description and keywords such as sheet metal manufacturing, laser cutting and metal fabrication.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Area | Tools |
+|---|---|
+| Framework | Next.js App Router, React, TypeScript |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| Forms | Web3Forms |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  page.tsx       All sections, navigation and the inquiry form
+  layout.tsx     Fonts and page metadata
+  globals.css    Tailwind setup
+public/images/   Machine and product photos
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Running it
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm install
+npm run dev
+```
 
-## Deploy on Vercel
+Open http://localhost:3000. To build for production:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+
+Siddhesh Patil
